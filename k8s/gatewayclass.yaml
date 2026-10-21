@@ -28,8 +28,7 @@ spec:
   parentRefs:
     - name: fastapi-gateway
   rules:
-    # ΚΑΝΟΝΑΣ 1: Έτοιμος για το API (Αξιολογείται Πρώτος)
-    - matches:
+    - matches: # /api rule 
         - path:
             type: PathPrefix
             value: /api
@@ -37,8 +36,7 @@ spec:
         - name: fastapi-service
           port: 5000
 
-    # ΚΑΝΟΝΑΣ 2: Έτοιμος για το μελλοντικό Frontend (Αξιολογείται Δεύτερος)
-    - matches:
+    - matches:      # 2nd rule for future backend services
         - path:
             type: PathPrefix
             value: /
